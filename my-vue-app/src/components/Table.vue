@@ -12,7 +12,12 @@
         </td>
       </tr>
     </tbody>
-    <SettingsModal :show="showSettingsModal" @close="closeModal"></SettingsModal>
+    <SettingsModal 
+      :show="showSettingsModal" 
+      @close="closeModal"
+      @exportToExcel="exportToExcel"
+    >
+    </SettingsModal>
     <button @click.self="openModal">открыть</button>
   </table>
 </template>
@@ -20,7 +25,9 @@
 <script setup lang="ts">
 import {ref} from 'vue';
 import SettingsModal from './modals/SettingsModal.vue';
-defineProps<{
+import { utils, writeFile } from 'xlsx';
+
+const props = defineProps<{
   headers: string[];
   data: Record<string, any>[];
 }>();
@@ -34,6 +41,16 @@ const openModal = () => {
 const closeModal = () => {
   showSettingsModal.value = false;
 };
+
+//TODO обновить метод под vueExcelEditor
+const exportToExcel = () => {
+  const ws = utils.json_to_sheet(props.data);
+
+  const wb = utils.book_new();
+  utils.book_append_sheet(wb, ws, 'Таблица');
+
+  writeFile(wb, 'table_data.xlsx');
+}
 
 </script>
 
