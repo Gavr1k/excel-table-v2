@@ -2,17 +2,23 @@ import { createI18n } from 'vue-i18n';
 
 const messages = {
   en: {
-    modal: {
-      close: 'Close',
-      message: 'Hello! This is a modal window.',
-      open: 'Open Modal',
+    common: {
+      back: 'Back',
+    },
+    settingsModal: {
+      tableSettingsTitle: 'Settings of the table',
+      exportToExcel: 'Export to excel',
+      importToExcel: 'Import to excel',
     },
   },
   ru: {
-    modal: {
-      close: 'Закрыть',
-      message: 'Привет! Это модальное окно.',
-      open: 'Открыть модальное',
+    common: {
+      back: 'Назад',
+    },
+    settingsModal: {
+      tableSettingsTitle: 'Настройки таблицы',
+      exportToExcel: 'Экспорт в эксель',
+      importToExcel: 'Импорт в эксель',
     },
   },
 };

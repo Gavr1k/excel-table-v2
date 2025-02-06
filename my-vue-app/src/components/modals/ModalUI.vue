@@ -8,9 +8,11 @@
       <div class="modal__title">
         <slot name="title"></slot>
       </div>
+      <hr class="modal__divider"/>
       <div class="modal__body">
         <slot name="content"></slot>
       </div>
+      <hr class="modal__divider"/>
       <div class="modal__actions">
         <slot name="actions"></slot>
       </div>
@@ -55,10 +57,26 @@ const handleClickOutside = () => {
 
 .modal__content {
   background: white;
-  padding: 20px;
   border-radius: 8px;
-  min-width: 300px;
+  min-width: 400px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal__title {
+  padding: 8px 16px;
+  font-size: 1.5rem;
+}
+
+.modal__body {
+  padding: 8px 16px;
+}
+
+.modal__actions {
+  padding: 8px 16px;
+}
+
+.modal__divider {
+  padding: 0px 4px;
 }
 
 .modal-close {
