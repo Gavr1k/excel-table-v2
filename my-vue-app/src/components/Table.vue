@@ -12,14 +12,29 @@
         </td>
       </tr>
     </tbody>
+    <SettingsModal :show="showSettingsModal" @close="closeModal"></SettingsModal>
+    <button @click.self="openModal">открыть</button>
   </table>
 </template>
 
 <script setup lang="ts">
+import {ref} from 'vue';
+import SettingsModal from './modals/SettingsModal.vue';
 defineProps<{
   headers: string[];
   data: Record<string, any>[];
 }>();
+
+const showSettingsModal = ref(false);
+
+const openModal = () => {
+  showSettingsModal.value = true;
+};
+
+const closeModal = () => {
+  showSettingsModal.value = false;
+};
+
 </script>
 
 <style scoped>
