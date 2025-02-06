@@ -1,4 +1,4 @@
-import Table from './Table.vue';
+import Table from '../components/Table.vue';
 import type { Meta, StoryObj } from '@storybook/vue3';
 
 const meta: Meta<typeof Table> = {

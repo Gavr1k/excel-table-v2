@@ -1,10 +1,3 @@
-<script setup lang="ts">
-defineProps<{
-  headers: string[];
-  data: Record<string, any>[];
-}>();
-</script>
-
 <template>
   <table class="table">
     <thead>
@@ -21,6 +14,13 @@ defineProps<{
     </tbody>
   </table>
 </template>
+
+<script setup lang="ts">
+defineProps<{
+  headers: string[];
+  data: Record<string, any>[];
+}>();
+</script>
 
 <style scoped>
 .table {
