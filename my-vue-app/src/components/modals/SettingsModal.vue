@@ -6,7 +6,7 @@
         <ButtonUI @click.self="importToExcel">Импорт в эксель</ButtonUI>
       </template>
       <template #actions>
-        <ButtonUI>Назад</ButtonUI>
+        <ButtonUI @click.self="emit('close')">Назад</ButtonUI>
       </template>
     </ModalUI>
 </template>
@@ -15,9 +15,11 @@
 import ModalUI from './ModalUI.vue';
 import ButtonUI from '../ui/ButtonUI.vue';
 
-const props = defineProps<{
-  show: boolean,
-}>();
+interface Props {
+  show: boolean
+}
+
+const props = defineProps<Props>();
 
 const emit = defineEmits(['close', 'exportToExcel', 'importToExcel']);
 

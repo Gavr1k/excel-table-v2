@@ -18,8 +18,8 @@
 }
 
 .btn-primary {
-  background-color: var(--base-color);
-  color: var(--color-white);
+  background-color: green;
+  color: white;
 }
 
 </style>

@@ -21,17 +21,15 @@
 </template>
 
 <script setup lang="ts">
-import ButtonUI from '../ui/ButtonUI.vue';
-const props = defineProps<{
-  show: {
-    type: Boolean,
-    required: false,
-  },
-  closeOnClickOutside: {
-    type: Boolean,
-    default: true,
-  },
-}>();
+interface Props {
+  show: boolean;
+  closeOnClickOutside?: boolean,
+}
+
+const props = withDefaults(defineProps<Props>(), {
+  show: false,
+  closeOnClickOutside: true,
+});
 
 const emit = defineEmits(['close']);
 
